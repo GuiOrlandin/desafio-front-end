@@ -1,0 +1,28 @@
+{
+	"books": [
+		{
+			"id": "1",
+			"title": "a title",
+			"description": "100"
+		},
+		{
+			"id": "2",
+			"title": "another title",
+			"description": "200"
+		}
+	],
+	"users": [
+		{
+			"email": "guiorlaasfandin@gmail.com",
+			"password": "123456",
+			"isAdmin": true,
+			"id": "8852"
+		},
+		{
+			"id": "609babee-dee4-4dfe-a700-962cd7f51908",
+			"email": "guiorlandin@gmail.com",
+			"password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
+			"isAdmin": false
+		}
+	]
+}
