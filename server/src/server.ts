@@ -2,6 +2,7 @@ import registerController from "./controller/registerController";
 import loginController from "./controller/loginController";
 import { authMiddleware } from "./middleware/authMiddleware";
 import jsonServer from "json-server";
+import createBookController from "./controller/createBookController";
 
 const databasePath = "db.json";
 
@@ -16,6 +17,7 @@ server.use(
 
 server.post("/register", registerController);
 server.post("/login", loginController);
+server.post("/books", createBookController);
 
 server.use(authMiddleware);
 
