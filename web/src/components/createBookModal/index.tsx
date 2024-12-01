@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { z } from "zod";
 
@@ -44,6 +44,12 @@ export default function CreateBookModal() {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      setIsModalOpen(!isModalOpen);
+    }
+  }, [isSuccess]);
 
   return (
     <div>

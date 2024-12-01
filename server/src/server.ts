@@ -3,6 +3,7 @@ import loginController from "./controller/loginController";
 import { authMiddleware } from "./middleware/authMiddleware";
 import jsonServer from "json-server";
 import createBookController from "./controller/createBookController";
+import deleteBookController from "./controller/deleteBookController";
 
 const databasePath = "db.json";
 
@@ -18,6 +19,7 @@ server.use(
 server.post("/register", registerController);
 server.post("/login", loginController);
 server.post("/books", createBookController);
+server.delete("/books/:bookId", deleteBookController);
 
 server.use(authMiddleware);
 

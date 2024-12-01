@@ -1,35 +1,28 @@
 {
-	"books": [
-		{
-			"id": "1",
-			"title": "a title",
-			"description": "100"
-		},
-		{
-			"id": "8188c3ce-48f4-42ca-949c-99596760ad55",
-			"title": "testando",
-			"description": "um livro de teste",
-			"price": 345
-		},
-		{
-			"id": "3d3a4412-09c4-428e-a7c4-9e399cd7f06d",
-			"title": "testandoa",
-			"description": "safafaf",
-			"price": 21
-		}
-	],
-	"users": [
-		{
-			"email": "guiorlaasfandin@gmail.com",
-			"password": "123456",
-			"isAdmin": true,
-			"id": "8852"
-		},
-		{
-			"id": "609babee-dee4-4dfe-a700-962cd7f51908",
-			"email": "guiorlandin@gmail.com",
-			"password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
-			"isAdmin": true
-		}
-	]
+  "books": [
+    {
+      "id": "2",
+      "title": "a title",
+      "description": "100"
+    },
+    {
+      "id": "3",
+      "title": "a title",
+      "description": "100"
+    }
+  ],
+  "users": [
+    {
+      "email": "guiorlaasfandin@gmail.com",
+      "password": "123456",
+      "isAdmin": true,
+      "id": "8852"
+    },
+    {
+      "id": "609babee-dee4-4dfe-a700-962cd7f51908",
+      "email": "guiorlandin@gmail.com",
+      "password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
+      "isAdmin": true
+    }
+  ]
 }

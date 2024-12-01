@@ -1,6 +1,6 @@
-import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { userStore } from "../../store/userStore";
+import DeleteBook from "../deleteBookModal";
 
 interface BookCardProps {
   book: {
@@ -24,13 +24,14 @@ export default function BookCard({ book }: BookCardProps) {
               </h2>
               <p className="text-lg text-gray-600 mt-2 mb-10">{book.price}</p>
             </div>
-            <div className="flex justify-between gap-4 items-center mt-auto">
+            <div className="flex justify-between gap-4 mt-auto">
               <button className="flex items-center gap-4 h-10 justify-center w-full bg-blue-400 text-white rounded-lg hover:bg-blue-600">
                 <FaEdit />
               </button>
-              <button className="flex items-center gap-4 h-10 justify-center w-full bg-red-400 text-white rounded-lg hover:bg-red-500">
-                <MdDelete />
-              </button>
+
+              <div className="w-full">
+                <DeleteBook bookId={book.id} />
+              </div>
             </div>
           </div>
         ) : (

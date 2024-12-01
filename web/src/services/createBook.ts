@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 
-export interface UserRegisterDetails {
+export interface CreateBookDetails {
   title: string;
   price: number;
   description: string;
 }
 
-async function postData(data: UserRegisterDetails) {
+async function postData(data: CreateBookDetails) {
   await axios.post("http://localhost:3000/books", data);
 }
 
