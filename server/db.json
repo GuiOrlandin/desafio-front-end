@@ -1,42 +1,42 @@
 {
-	"books": [
-		{
-			"id": "1",
-			"title": "O Senhor dos Anéis",
-			"price": "R$ 59,90",
-			"description": "Uma das maiores obras de fantasia épica, 'O Senhor dos Anéis' narra a luta do bem contra o mal na Terra Média em uma jornada inesquecível."
-		},
-		{
-			"id": "2",
-			"title": "Harry Potter e a Pedra Filosofal",
-			"price": "R$ 49,90",
-			"description": "O início da mágica jornada de Harry Potter, onde ele descobre ser um bruxo e embarca em aventuras no mundo encantador de Hogwarts."
-		},
-		{
-			"id": "3",
-			"title": "O Hobbit",
-			"price": "R$ 39,90",
-			"description": "Uma história fascinante sobre a jornada de Bilbo Bolseiro, um hobbit comum que descobre coragem e aventuras extraordinárias."
-		},
-		{
-			"id": "'4'",
-			"title": "1984",
-			"price": "R$ 29,90",
-			"description": "Um clássico distópico que explora um futuro opressor governado por um regime totalitário e a luta por liberdade e verdade."
-		}
-	],
-	"users": [
-		{
-			"email": "guiorlaasfandin@gmail.com",
-			"password": "123456",
-			"isAdmin": true,
-			"id": "8852"
-		},
-		{
-			"id": "609babee-dee4-4dfe-a700-962cd7f51908",
-			"email": "guiorlandin@gmail.com",
-			"password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
-			"isAdmin": true
-		}
-	]
+  "books": [
+    {
+      "id": "1",
+      "title": "O Senhor dos Anéis",
+      "price": "59,90",
+      "description": "Uma das maiores obras de fantasia épica, 'O Senhor dos Anéis' narra a luta do bem contra o mal na Terra Média em uma jornada inesquecível."
+    },
+    {
+      "id": "2",
+      "title": "Harry Potter e a Pedra Filosofal",
+      "price": "49,90",
+      "description": "O início da mágica jornada de Harry Potter, onde ele descobre ser um bruxo e embarca em aventuras no mundo encantador de Hogwarts."
+    },
+    {
+      "description": "Uma história fascinante sobre a jornada de Bilbo Bolseiro, um hobbit comum que descobre coragem e aventuras extraordinárias.",
+      "price": 3991,
+      "title": "O Hobbit",
+      "id": "3"
+    },
+    {
+      "description": "Um clássico distópico que explora um futuro opressor governado por um regime totalitário e a luta por liberdade e verdade.",
+      "price": 299,
+      "title": "1989",
+      "id": "4"
+    }
+  ],
+  "users": [
+    {
+      "email": "guiorlaasfandin@gmail.com",
+      "password": "123456",
+      "isAdmin": true,
+      "id": "8852"
+    },
+    {
+      "id": "609babee-dee4-4dfe-a700-962cd7f51908",
+      "email": "guiorlandin@gmail.com",
+      "password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
+      "isAdmin": true
+    }
+  ]
 }

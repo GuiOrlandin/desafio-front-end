@@ -15,10 +15,10 @@ export default async function updateBookController(req: any, res: any) {
   }
 
   const updatedBook = {
-    ...books[bookIndex],
-    ...(title && { title }),
-    ...(description && { description }),
-    ...(price && { price }),
+    id: bookId,
+    title,
+    description,
+    price,
   };
 
   books[bookIndex] = updatedBook;
