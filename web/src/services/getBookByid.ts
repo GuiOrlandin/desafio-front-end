@@ -6,6 +6,7 @@ export interface BookResponse {
   id: string;
   price: number;
   description: string;
+  author: string;
 }
 
 async function fetchBookInfo(bookId: string): Promise<BookResponse> {

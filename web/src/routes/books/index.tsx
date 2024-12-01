@@ -1,5 +1,6 @@
 import BookCard from "../../components/bookCard";
 import CreateBookModal from "../../components/EditOrCreatebookModal";
+import Header from "../../components/header";
 import LoadingSpinner from "../../components/loadingSpinner";
 import { booksQuery } from "../../services/getAllBooks";
 
@@ -12,12 +13,7 @@ export default function Books() {
         <LoadingSpinner />
       ) : (
         <>
-          <header className="flex justify-end items-center gap-4 bg-gray-100 rounded-lg text-white p-4">
-            <CreateBookModal />
-            <button className="flex items-center gap-2 px-4 py-3 mr-4 bg-blue-400 text-white rounded-lg hover:bg-blue-600">
-              Logout
-            </button>
-          </header>
+          <Header />
           <h1 className="text-4xl font-bold mt-6 mb-6 text-center text-gray-900 mb-6">
             Livros Disponíveis
           </h1>

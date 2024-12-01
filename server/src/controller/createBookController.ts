@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { readData, writeData } from "../../utils/databaseManager";
 
 export default async function createBookController(req: any, res: any) {
-  const { title, description, price } = req.body;
+  const { title, description, price, author } = req.body;
 
   const books = await readData("books");
 
@@ -19,6 +19,7 @@ export default async function createBookController(req: any, res: any) {
     title,
     description,
     price,
+    author,
   };
 
   await writeData("books", newBook);

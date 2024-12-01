@@ -1,28 +1,32 @@
 {
   "books": [
     {
-      "id": "1",
+      "description": "Uma das maiores obras de fantasia épica, 'O Senhor dos Anéis' narra a luta do bem contra o mal na Terra Média em uma jornada inesquecível.",
+      "price": 59.92,
       "title": "O Senhor dos Anéis",
-      "price": "59,90",
-      "description": "Uma das maiores obras de fantasia épica, 'O Senhor dos Anéis' narra a luta do bem contra o mal na Terra Média em uma jornada inesquecível."
+      "author": "J.K. Rowling",
+      "id": "1"
     },
     {
-      "id": "2",
+      "description": "O início da mágica jornada de Harry Potter, onde ele descobre ser um bruxo e embarca em aventuras no mundo encantador de Hogwarts.",
+      "price": 4991,
       "title": "Harry Potter e a Pedra Filosofal",
-      "price": "49,90",
-      "description": "O início da mágica jornada de Harry Potter, onde ele descobre ser um bruxo e embarca em aventuras no mundo encantador de Hogwarts."
+      "id": "2",
+      "author": "J.K. Rowling"
     },
     {
       "description": "Uma história fascinante sobre a jornada de Bilbo Bolseiro, um hobbit comum que descobre coragem e aventuras extraordinárias.",
-      "price": 3991,
+      "price": 39.41,
       "title": "O Hobbit",
-      "id": "3"
+      "id": "3",
+      "author": "J.R.R. Tolkien"
     },
     {
       "description": "Um clássico distópico que explora um futuro opressor governado por um regime totalitário e a luta por liberdade e verdade.",
       "price": 299,
       "title": "1989",
-      "id": "4"
+      "id": "4",
+      "author": "George Orwell"
     }
   ],
   "users": [

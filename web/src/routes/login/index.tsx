@@ -7,6 +7,7 @@ import { z } from "zod";
 import { userRegisterMutate } from "../../services/createUser";
 import { userAuthenticateMutate } from "../../services/authUser";
 import { userStore } from "../../store/userStore";
+import { useNavigate } from "react-router-dom";
 
 interface AuthAndRegisterData {
   email: string;
@@ -31,6 +32,7 @@ export default function Login() {
   const [isActive, setIsActive] = useState<string>("login");
   const { mutate } = userRegisterMutate();
   const { mutate: userAuthMutate, isSuccess, data } = userAuthenticateMutate();
+  const navigate = useNavigate();
 
   const setUser = userStore((state) => state.setUser);
   const user = userStore((state) => state.user);
@@ -78,8 +80,16 @@ export default function Login() {
         id: data.id,
         isAdmin: data.isAdmin,
       });
+
+      navigate("/books");
     }
   }, [isSuccess, data]);
+
+  useEffect(() => {
+    if (user.email !== "") {
+      navigate("/books");
+    }
+  }, [user]);
 
   return (
     <div className="flex flex-col min-h-screen justify-center p-8 pt-0 items-center ">

@@ -5,6 +5,7 @@ export interface CreateBookDetails {
   title: string;
   price: number;
   description: string;
+  author: string;
 }
 
 async function postData(data: CreateBookDetails) {

@@ -9,6 +9,9 @@ import { FaEdit } from "react-icons/fa";
 
 const createBookSchema = z.object({
   title: z.string().min(3, "O título deve ter pelo menos 3 caracteres."),
+  author: z
+    .string()
+    .min(3, "o nome do autor deve ter pelo menos 3 caracteres."),
   description: z
     .string()
     .min(3, "A descrição deve ter pelo menos 3 caracteres."),
@@ -16,7 +19,7 @@ const createBookSchema = z.object({
     .union([z.string(), z.number()])
     .transform((val) => {
       if (typeof val === "string") {
-        const cleanedValue = val.replace(/[^0-9.]/g, "");
+        const cleanedValue = val.replace(/[^0-9,.-]/g, "").replace(",", ".");
         const number = parseFloat(cleanedValue);
         return isNaN(number) ? 0 : number;
       }
@@ -165,6 +168,25 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                         {errors.title && errors.title.message}
                       </p>
                     </div>
+                    <div className="flex flex-col mb-4">
+                      <label
+                        htmlFor="title"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Autor
+                      </label>
+                      <input
+                        type="text"
+                        {...register("author")}
+                        id="title"
+                        className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        placeholder="Digite o título do livro"
+                        required
+                      />
+                      <p className="absolute text-red-600 text-sm mt-[75px]">
+                        {errors.author && errors.author.message}
+                      </p>
+                    </div>
                     <div>
                       <label
                         htmlFor="price"
@@ -234,6 +256,25 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                         {errors.title && errors.title.message}
                       </p>
                     </div>
+                    <div className="flex flex-col mb-4">
+                      <label
+                        htmlFor="title"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Autor
+                      </label>
+                      <input
+                        type="text"
+                        {...register("author")}
+                        id="title"
+                        className="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        placeholder="Digite o título do livro"
+                        required
+                      />
+                      <p className="absolute text-red-600 text-sm mt-[75px]">
+                        {errors.author && errors.author.message}
+                      </p>
+                    </div>
                     <div>
                       <label
                         htmlFor="price"
@@ -250,7 +291,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                         required
                       />
 
-                      <p className="absolute text-red-600 text-sm mt-[-10px]">
+                      <p className="absolute text-red-600 text-sm mt-[-16px]">
                         {errors.price && errors.price.message}
                       </p>
                     </div>
