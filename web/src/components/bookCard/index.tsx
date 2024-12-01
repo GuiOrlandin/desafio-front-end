@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { userStore } from "../../store/userStore";
-import DeleteBook from "../deleteBookModal";
 import BookModal from "../EditOrCreatebookModal";
+import { deleteBookMutate } from "../../services/deleteBook";
+import DeleteModal from "../deleteModal";
 
 interface BookCardProps {
   book: {
@@ -14,13 +16,22 @@ interface BookCardProps {
 
 export default function BookCard({ book }: BookCardProps) {
   const user = userStore((state) => state.user);
+  const navigate = useNavigate();
+  const { isSuccess, mutate } = deleteBookMutate();
+
+  function handleDelete() {
+    mutate(book.id);
+  }
 
   return (
     <div className="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:cursor-pointer">
       <div className="flex flex-col p-4 w-full h-full">
         {user.isAdmin ? (
           <div>
-            <div className="flex-grow">
+            <div
+              onClick={() => navigate(`/book/${book.id}`)}
+              className="flex-grow"
+            >
               <h2 className="text-xl font-semibold text-gray-800">
                 {book.title}
               </h2>
@@ -40,12 +51,20 @@ export default function BookCard({ book }: BookCardProps) {
                 <BookModal book={book} />
               </div>
               <div className="w-full">
-                <DeleteBook bookId={book.id} />
+                <DeleteModal
+                  actionFunction={handleDelete}
+                  component="bookCard"
+                  success={isSuccess}
+                  title="Você tem certeza que deseja deletar este livro?"
+                />
               </div>
             </div>
           </div>
         ) : (
-          <div className="flex-grow">
+          <div
+            className="flex-grow"
+            onClick={() => navigate(`/book/${book.id}`)}
+          >
             <h2 className="text-xl font-semibold text-gray-800">
               {book.title}
             </h2>

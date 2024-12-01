@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./routes/login";
 import Books from "./routes/books";
 import BookDetails from "./routes/bookDetails";
+import AdminProfile from "./routes/adminProfile";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,10 @@ export default function App() {
     {
       path: "/book/:id",
       element: <BookDetails />,
+    },
+    {
+      path: "/adminProfile",
+      element: <AdminProfile />,
     },
   ]);
 

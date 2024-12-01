@@ -49,7 +49,7 @@ export async function deleteData(entity: string, bookId: string) {
 
 export async function updateData(
   entity: string,
-  bookId: string,
+  id: string,
   updatedFields: any
 ) {
   const data = await fs.readFile(databasePath);
@@ -61,7 +61,7 @@ export async function updateData(
 
   const entityList = dataParse[entity];
 
-  const itemIndex = entityList.findIndex((item: any) => item.id === bookId);
+  const itemIndex = entityList.findIndex((item: any) => item.id === id);
 
   if (itemIndex === -1) {
     throw new Error("Item not found.");

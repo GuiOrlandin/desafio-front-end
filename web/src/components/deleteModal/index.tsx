@@ -1,39 +1,50 @@
 import { useState, useEffect } from "react";
 
 import { MdDelete } from "react-icons/md";
-import { deleteBookMutate } from "../../services/deleteBook";
 
 interface DeleteBookProps {
-  bookId: string;
+  success: boolean;
+  actionFunction: () => void;
+  title: string;
+  component: string;
 }
 
-export default function DeleteBook({ bookId }: DeleteBookProps) {
+export default function DeleteModal({
+  actionFunction,
+  success,
+  title,
+  component,
+}: DeleteBookProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { isSuccess, mutate } = deleteBookMutate();
 
   function toggleModal() {
     setIsModalOpen(!isModalOpen);
   }
 
-  function handleDelete() {
-    mutate(bookId);
-  }
-
   useEffect(() => {
-    if (isSuccess) {
+    if (success) {
       setIsModalOpen(false);
     }
-  }, [isSuccess]);
+  }, [success]);
 
   return (
     <div>
-      <button
-        onClick={toggleModal}
-        className="flex items-center gap-4 h-10 justify-center w-full bg-red-400 text-white rounded-lg hover:bg-red-500"
-        type="button"
-      >
-        <MdDelete />
-      </button>
+      {component === "bookCard" ? (
+        <button
+          onClick={toggleModal}
+          className="flex items-center gap-4 h-10 justify-center w-full bg-red-400 text-white rounded-lg hover:bg-red-500"
+          type="button"
+        >
+          <MdDelete />
+        </button>
+      ) : (
+        <button
+          onClick={toggleModal}
+          className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700"
+        >
+          Excluir
+        </button>
+      )}
 
       {isModalOpen && (
         <div
@@ -81,11 +92,11 @@ export default function DeleteBook({ bookId }: DeleteBookProps) {
                     d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                   />
                 </svg>
-                <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                  Você tem certeza que deseja deletar este livro?
+                <h3 className="mb-5 text-lg font-normal text-gray-800 text-2xl">
+                  {title}
                 </h3>
                 <button
-                  onClick={handleDelete}
+                  onClick={actionFunction}
                   type="button"
                   className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
                 >

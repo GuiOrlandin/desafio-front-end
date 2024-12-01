@@ -15,5 +15,5 @@ export default async function deleteBookController(req: any, res: any) {
 
   await deleteData("books", bookId);
 
-  return res.status(204).end();
+  return res.status(204).send();
 }
