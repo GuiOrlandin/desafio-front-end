@@ -5,7 +5,7 @@ import DeleteBook from "../deleteBookModal";
 interface BookCardProps {
   book: {
     title: string;
-    price: string;
+    price: number;
     id: string;
   };
 }

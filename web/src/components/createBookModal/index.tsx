@@ -149,7 +149,7 @@ export default function CreateBookModal() {
                   </label>
                   <textarea
                     {...register("description")}
-                    placeholder="Digite o preço do livro"
+                    placeholder="Digite a descrição do livro"
                     id="price"
                     className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white resize-none"
                     required

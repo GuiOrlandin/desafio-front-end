@@ -46,3 +46,35 @@ export async function deleteData(entity: string, bookId: string) {
 
   await fs.writeFile(databasePath, JSON.stringify(dataParse, null, "\t"));
 }
+
+export async function updateData(
+  entity: string,
+  bookId: string,
+  updatedFields: any
+) {
+  const data = await fs.readFile(databasePath);
+  const dataParse = JSON.parse(data.toString());
+
+  if (!dataParse[entity]) {
+    throw new Error("entity not found.");
+  }
+
+  const entityList = dataParse[entity];
+
+  const itemIndex = entityList.findIndex((item: any) => item.id === bookId);
+
+  if (itemIndex === -1) {
+    throw new Error("Item not found.");
+  }
+
+  const updatedItem = {
+    ...entityList[itemIndex],
+    ...updatedFields,
+  };
+
+  entityList[itemIndex] = updatedItem;
+
+  await fs.writeFile(databasePath, JSON.stringify(dataParse, null, "\t"));
+
+  return updatedItem;
+}

@@ -16,7 +16,7 @@ export default function DeleteBook({ bookId }: DeleteBookProps) {
   }
 
   function handleDelete() {
-    mutate("4");
+    mutate(bookId);
   }
 
   useEffect(() => {
@@ -24,7 +24,6 @@ export default function DeleteBook({ bookId }: DeleteBookProps) {
       setIsModalOpen(false);
     }
   }, [isSuccess]);
-
 
   return (
     <div>
