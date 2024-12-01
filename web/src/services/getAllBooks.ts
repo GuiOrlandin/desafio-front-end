@@ -1,5 +1,5 @@
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useMutation } from "@tanstack/react-query";
 
 export interface BookResponse {
   title: string;
@@ -8,17 +8,14 @@ export interface BookResponse {
   description?: string;
 }
 
-async function getData() {
+async function fetchBooks(): Promise<BookResponse[]> {
   const response = await axios.get("http://localhost:3000/books");
-
-  const books: BookResponse[] = response.data;
-
-  return books;
+  return response.data;
 }
 
-export function getAllBooksMutate() {
-  const mutate = useMutation({
-    mutationFn: getData,
+export function booksQuery() {
+  return useQuery({
+    queryKey: ["bookList"],
+    queryFn: fetchBooks,
   });
-  return mutate;
 }

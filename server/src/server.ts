@@ -3,6 +3,7 @@ import loginController from "./controller/loginController";
 import jsonServer from "json-server";
 import createBookController from "./controller/createBookController";
 import deleteBookController from "./controller/deleteBookController";
+import getAllBooksController from "./controller/getAllBooksController";
 
 const databasePath = "db.json";
 
@@ -19,6 +20,7 @@ server.post("/register", registerController);
 server.post("/login", loginController);
 server.post("/books", createBookController);
 server.delete("/books/:bookId", deleteBookController);
+server.get("/books", getAllBooksController);
 
 server.use(router);
 

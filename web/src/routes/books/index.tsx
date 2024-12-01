@@ -3,18 +3,14 @@ import { useEffect } from "react";
 import BookCard from "../../components/bookCard";
 import CreateBookModal from "../../components/createBookModal";
 import LoadingSpinner from "../../components/loadingSpinner";
-import { getAllBooksMutate } from "../../services/getAllBooks";
+import { booksQuery } from "../../services/getAllBooks";
 
 export default function Books() {
-  const { data, isSuccess, mutate } = getAllBooksMutate();
-
-  useEffect(() => {
-    mutate();
-  }, []);
+  const { data, isLoading } = booksQuery();
 
   return (
     <div className="flex flex-col px-24 py-12 h-[100vh] bg-gray-50">
-      {!isSuccess ? (
+      {isLoading ? (
         <LoadingSpinner />
       ) : (
         <>
@@ -28,9 +24,7 @@ export default function Books() {
             Livros Disponíveis
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {data.map((book) => (
-              <BookCard book={book} />
-            ))}
+            {data && data.map((book) => <BookCard book={book} />)}
           </div>
         </>
       )}
