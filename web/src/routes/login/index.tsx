@@ -102,7 +102,7 @@ export default function LoginOrRegister() {
         <div className="flex">
           <button
             className={`text-gray-700 border-b border-gray-700 py-2 px-4 hover:text-blue-500 hover:border-blue-500 focus:outline-none 
-            ${isActive === "login" ? "text-blue-500 border-blue-500" : ""}
+      
           `}
             onClick={() => handleClick("login")}
           >
@@ -111,7 +111,6 @@ export default function LoginOrRegister() {
           <button
             data-testid="register-page"
             className={`text-gray-700 border-b border-gray-700 py-2 px-4 transition-colors duration-200 hover:text-blue-500 hover:border-blue-500 focus:outline-none 
-          ${isActive === "register" && "text-blue-500 border-blue-500"}
           `}
             onClick={() => handleClick("register")}
           >
