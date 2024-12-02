@@ -41,11 +41,8 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
     mutate: createMutate,
     error: createError,
   } = createBookMutate();
-  const {
-    isSuccess: isUpdateSuccess,
-    mutate: updateMutate,
-    error: updateError,
-  } = updateBookMutate();
+  const { isSuccess: isUpdateSuccess, mutate: updateMutate } =
+    updateBookMutate();
 
   const isEditing = !!book;
 
@@ -97,6 +94,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
     <div>
       <button
         onClick={toggleModal}
+        data-testid="open-modal"
         className="flex justify-center gap-2 px-4 py-3 w-full bg-blue-400 text-white rounded-lg hover:bg-blue-600"
         type="button"
       >
@@ -159,6 +157,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       <input
                         type="text"
                         {...register("title")}
+                        data-testid="edit-book-title"
                         id="title"
                         className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         placeholder="Digite o título do livro"
@@ -178,6 +177,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       <input
                         type="text"
                         {...register("author")}
+                        data-testid="edit-book-author"
                         id="title"
                         className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         placeholder="Digite o título do livro"
@@ -197,6 +197,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       <input
                         type="text"
                         {...register("price")}
+                        data-testid="edit-book-price"
                         placeholder="Digite o preço do livro"
                         id="price"
                         className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -216,6 +217,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       </label>
                       <textarea
                         {...register("description")}
+                        data-testid="edit-book-description"
                         placeholder="Digite a descrição do livro"
                         id="price"
                         className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white resize-none"
@@ -246,6 +248,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       </label>
                       <input
                         type="text"
+                        data-testid="create-book-title"
                         {...register("title")}
                         id="title"
                         className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -266,6 +269,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       <input
                         type="text"
                         {...register("author")}
+                        data-testid="create-book-author"
                         id="title"
                         className="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         placeholder="Digite o título do livro"
@@ -285,6 +289,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       <input
                         type="text"
                         {...register("price")}
+                        data-testid="create-book-price"
                         placeholder="Digite o preço do livro"
                         id="price"
                         className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -305,6 +310,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                       <textarea
                         {...register("description")}
                         placeholder="Digite a descrição do livro"
+                        data-testid="create-book-description"
                         id="price"
                         className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white resize-none"
                         required
@@ -326,6 +332,7 @@ export default function EditOrCreateBookModal({ book }: BookModalProps) {
                 )}
 
                 <button
+                  data-testid="action-confirm-button"
                   type="submit"
                   className="w-full text-white bg-blue-400 rounded-lg hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
