@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { userStore } from "../../store/userStore";
+import { CgProfile } from "react-icons/cg";
+
 import EditOrCreateBookModal from "../EditOrCreatebookModal";
 
 export default function Header() {
@@ -8,7 +10,12 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="flex justify-end items-center mb-8 bg-gray-100 rounded-lg text-white p-4">
+    <header className="flex justify-between items-center mb-8 bg-gray-100 rounded-lg text-white p-4">
+      {user && user.isAdmin && (
+        <a className="cursor-pointer" href="/adminProfile">
+          <CgProfile color="rgb(96, 165, 250)" size={34} />
+        </a>
+      )}
       <div className="flex gap-4">
         {user && user.isAdmin && <EditOrCreateBookModal />}
         {user.email !== "" && user ? (
