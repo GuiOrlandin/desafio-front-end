@@ -1,39 +1,39 @@
 {
-	"books": [
-		{
-			"description": "Uma das maiores obras de fantasia épica, 'O Senhor dos Anéis' narra a luta do bem contra o mal na Terra Média em uma jornada inesquecível.",
-			"price": 59.92,
-			"title": "O Senhor dos Anéis",
-			"author": "J.K. Rowling",
-			"id": "1"
-		},
-		{
-			"description": "O início da mágica jornada de Harry Potter, onde ele descobre ser um bruxo e embarca em aventuras no mundo encantador de Hogwarts.",
-			"price": 4991,
-			"title": "Harry Potter e a Pedra Filosofal",
-			"id": "2",
-			"author": "J.K. Rowling"
-		},
-		{
-			"description": "Uma história fascinante sobre a jornada de Bilbo Bolseiro, um hobbit comum que descobre coragem e aventuras extraordinárias.",
-			"price": 39.41,
-			"title": "O Hobbit",
-			"id": "3",
-			"author": "J.R.R. Tolkien"
-		}
-	],
-	"users": [
-		{
-			"id": "609babee-dee4-4dfe-a700-962cd7f51908",
-			"email": "guiorlandin@gmail.com",
-			"password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
-			"isAdmin": true
-		},
-		{
-			"id": "609babee-dee4-4dfe-a700-962casfafasfasd7f51908",
-			"email": "gu@gmail.com",
-			"password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
-			"isAdmin": true
-		}
-	]
+  "books": [
+    {
+      "description": "Uma das maiores obras de fantasia épica, 'O Senhor dos Anéis' narra a luta do bem contra o mal na Terra Média em uma jornada inesquecível.",
+      "price": 59.92,
+      "title": "O Senhor dos Anéis",
+      "author": "J.K. Rowling",
+      "id": "1"
+    },
+    {
+      "description": "O início da mágica jornada de Harry Potter, onde ele descobre ser um bruxo e embarca em aventuras no mundo encantador de Hogwarts.",
+      "price": 4991,
+      "title": "Harry Potter e a Pedra Filosofal",
+      "id": "2",
+      "author": "J.K. Rowling"
+    },
+    {
+      "description": "Uma história fascinante sobre a jornada de Bilbo Bolseiro, um hobbit comum que descobre coragem e aventuras extraordinárias.",
+      "price": 39.41,
+      "title": "O Hobbit",
+      "id": "3",
+      "author": "J.R.R. Tolkien"
+    }
+  ],
+  "users": [
+    {
+      "id": "609babee-dee4-4dfe-a700-962cd7f51908",
+      "email": "admin@gmail.com",
+      "password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
+      "isAdmin": true
+    },
+    {
+      "id": "609babee-dee4-4dfe-a700-962casfafasfasd7f51908",
+      "email": "gu@gmail.com",
+      "password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
+      "isAdmin": true
+    }
+  ]
 }
