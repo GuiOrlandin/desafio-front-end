@@ -28,12 +28,6 @@
       "email": "admin@gmail.com",
       "password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
       "isAdmin": true
-    },
-    {
-      "id": "609babee-dee4-4dfe-a700-962casfafasfasd7f51908",
-      "email": "gu@gmail.com",
-      "password": "$2b$08$bOtvmEukFRWkbZub0eHQaeq/CdyvSwCH72LAUr/rlJogeCJa/svfq",
-      "isAdmin": true
     }
   ]
 }

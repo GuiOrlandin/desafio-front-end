@@ -30,7 +30,7 @@ type AuthSchema = z.infer<typeof authSchema>;
 
 export default function LoginOrRegister() {
   const [isActive, setIsActive] = useState<string>("login");
-  const { mutate, isSuccess: registerSuccess } = userRegisterMutate();
+  const { mutate, isSuccess: registerSuccess, error } = userRegisterMutate();
   const { mutate: userAuthMutate, isSuccess, data } = userAuthenticateMutate();
   const navigate = useNavigate();
 
@@ -95,6 +95,8 @@ export default function LoginOrRegister() {
       navigate("/books");
     }
   }, [user]);
+
+  console.log(error);
 
   return (
     <div className="flex flex-col min-h-screen justify-center p-8 pt-0 items-center ">
@@ -184,6 +186,9 @@ export default function LoginOrRegister() {
                 />
                 <p className="absolute text-red-600 text-sm mt-1">
                   {errors.password?.message}
+                  {error &&
+                    error.message === "Request failed with status code 400" &&
+                    "Usuário ja cadastrado"}
                 </p>
               </div>
 
