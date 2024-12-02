@@ -28,9 +28,9 @@ const authSchema = z.object({
 
 type AuthSchema = z.infer<typeof authSchema>;
 
-export default function Login() {
+export default function LoginOrRegister() {
   const [isActive, setIsActive] = useState<string>("login");
-  const { mutate } = userRegisterMutate();
+  const { mutate, isSuccess: registerSuccess } = userRegisterMutate();
   const { mutate: userAuthMutate, isSuccess, data } = userAuthenticateMutate();
   const navigate = useNavigate();
 
@@ -84,6 +84,11 @@ export default function Login() {
       navigate("/books");
     }
   }, [isSuccess, data]);
+  useEffect(() => {
+    if (registerSuccess) {
+      setIsActive("login");
+    }
+  }, [registerSuccess]);
 
   useEffect(() => {
     if (user.email !== "") {
@@ -104,6 +109,7 @@ export default function Login() {
             Já tenho conta
           </button>
           <button
+            data-testid="register-page"
             className={`text-gray-700 border-b border-gray-700 py-2 px-4 transition-colors duration-200 hover:text-blue-500 hover:border-blue-500 focus:outline-none 
           ${isActive === "register" && "text-blue-500 border-blue-500"}
           `}
@@ -119,6 +125,7 @@ export default function Login() {
               <div className="pt-8">
                 <label htmlFor="email">Email</label>
                 <input
+                  data-testid="login-email-input"
                   type="text"
                   id="email"
                   className="border rounded-md border-gray-300 p-2 w-full mt-2"
@@ -131,6 +138,7 @@ export default function Login() {
               <div className="pt-8">
                 <label htmlFor="password">Senha</label>
                 <input
+                  data-testid="login-password-input"
                   type="password"
                   id="password"
                   className="border rounded-md border-gray-300 p-2 w-full mt-2"
@@ -143,6 +151,7 @@ export default function Login() {
               </div>
 
               <button
+                data-testid="login-button"
                 type="submit"
                 className="border rounded-md border-gray-300 p-2 w-full mt-12 bg-gradient-to-r from-[#0796d3] to-[#53c0f0] text-gray-100"
               >
@@ -154,6 +163,7 @@ export default function Login() {
               <div className="pt-8">
                 <label htmlFor="email">Email</label>
                 <input
+                  data-testid="register-email-input"
                   type="text"
                   id="email"
                   {...register("email")}
@@ -167,6 +177,7 @@ export default function Login() {
               <div className="pt-8">
                 <label htmlFor="password">Senha</label>
                 <input
+                  data-testid="register-password-input"
                   type="password"
                   id="password"
                   {...register("password")}
@@ -178,6 +189,7 @@ export default function Login() {
               </div>
 
               <button
+                data-testid="register-button"
                 type="submit"
                 className="border rounded-md border-gray-300 p-2 w-full mt-12 bg-gradient-to-r from-[#0796d3] to-[#53c0f0] text-gray-100"
               >
