@@ -34,6 +34,7 @@ export default function DeleteModal({
           onClick={toggleModal}
           className="flex items-center gap-4 h-10 justify-center w-full bg-red-400 text-white rounded-lg hover:bg-red-500"
           type="button"
+          data-testid="open-delete-modal"
         >
           <MdDelete />
         </button>
@@ -97,6 +98,7 @@ export default function DeleteModal({
                 </h3>
                 <button
                   onClick={actionFunction}
+                  data-testid="delete-button-modal"
                   type="button"
                   className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
                 >
